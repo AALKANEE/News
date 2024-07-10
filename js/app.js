@@ -1,5 +1,5 @@
 //classes
-
+const ui = new UI();
 //listeners
 listeners();
 function listeners() {
@@ -14,8 +14,11 @@ function search(e) {
   const category = document.querySelector("#category").value;
 
   if (newsName !== "" || country !== "" || category !== "") {
-    console.log("It is Okey")
+    console.log("It is Okey");
   } else {
-    console.log("Wrong!")
+    ui.printMessage(
+      "Please enter atleast one parameter",
+      "text-center alert alert-danger mt-4"
+    );
   }
 }
