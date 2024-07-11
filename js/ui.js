@@ -9,9 +9,18 @@ class UI{
         div.className=className
         //show the message in to the html
         document.querySelector('#message').appendChild(div)
+
+        //remove message 3s
+        setTimeout(() => {
+            this.removeMessage()
+        }, 3000);
         
     }
+    // remove message after showing
     removeMessage(){
-        
+        const alert = document.querySelector('.alert')
+        if(alert){
+            alert.remove()
+        }
     }
 }
