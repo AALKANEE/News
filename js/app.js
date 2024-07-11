@@ -1,5 +1,6 @@
 //classes
 const ui = new UI();
+const newsAPI=new News()
 //listeners
 listeners();
 function listeners() {
@@ -14,7 +15,7 @@ function search(e) {
   const category = document.querySelector("#category").value;
 
   if (newsName !== "" || country !== "" || category !== "") {
-    console.log("It is Okey");
+    newsAPI.queryAPI(newsName,country,category)
   } else {
     ui.printMessage(
       "Please enter atleast one parameter",
