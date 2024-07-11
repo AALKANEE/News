@@ -16,6 +16,9 @@ function search(e) {
 
   if (newsName !== "" || country !== "" || category !== "") {
     newsAPI.queryAPI(newsName,country,category)
+    .then(news =>{
+      console.log(news.news.articles)
+    })
   } else {
     ui.printMessage(
       "Please enter atleast one parameter",
