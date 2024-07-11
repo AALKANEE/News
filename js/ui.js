@@ -30,16 +30,18 @@ class UI {
 
   // showing result into the html
   showNews(news) {
-    news.forEach((newsInfo) => {
+      news.forEach((newsInfo) => {
+        console.log(newsInfo)
       this.result.innerHTML += `
                 <div class="col-md-4 mb-4>
                     <div class="card">
                         <div class="card-body">
-                            <h3 class ="card-title text-center">Card title</h3>
-                            <p class="card-text lead textto-info">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <span class="badge text-bg-primary">Primary</span>
-                            <span class="badge text-bg-primary">Primary</span>
-                            <a href="#" target="_blank" class="btn btn-primary btn-block">Go somewhere</a>
+                            <h3 class ="card-title text-center">${newsInfo.title.split('-',1)}</h3>
+                            <p class="card-text lead textto-info">news information: </p>
+                            <span class="badge badge-primary">Source: ${newsInfo.source.name}</span>
+                            <span class="badge badge-primary">Date & time: ${newsInfo.publishedAt.split('-',2)}</span>
+                            </br>
+                            <a href="${newsInfo.url}" target="_blank" class="btn btn-primary btn-block">More...</a>
                         </div>
                     </div>
                 </div>
