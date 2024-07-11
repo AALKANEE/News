@@ -1,3 +1,10 @@
 # News
-a project about news with Api 
-and you can see it in demo 
+<ol>
+  
+</ol>
+
+You can see in [Project](https://aalkanee.github.io/News/)
+
+
+----
+ <footer>&copy;ALKANE</footer>
