@@ -23,4 +23,9 @@ class UI{
             alert.remove()
         }
     }
+
+    //showing result into the html
+    showNews(news){
+        console.log(news)
+    }
 }

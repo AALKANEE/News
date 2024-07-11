@@ -1,6 +1,6 @@
 //classes
 const ui = new UI();
-const newsAPI=new News()
+const newsAPI = new News();
 //listeners
 listeners();
 function listeners() {
@@ -15,10 +15,18 @@ function search(e) {
   const category = document.querySelector("#category").value;
 
   if (newsName !== "" || country !== "" || category !== "") {
-    newsAPI.queryAPI(newsName,country,category)
-    .then(news =>{
-      console.log(news.news.articles)
-    })
+    newsAPI.queryAPI(newsName, country, category).then((news) => {
+      const newsArray = news.news.articles;
+      console.log(newsArray);
+      if (newsArray.length > 0) {
+        ui.showNews(newsArray)
+      } else {
+        ui.printMessage(
+          "There is not exist any news about category",
+          "text-center alert alert-danger mt-4"
+        );
+      }
+    });
   } else {
     ui.printMessage(
       "Please enter atleast one parameter",
